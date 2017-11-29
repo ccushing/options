@@ -8,7 +8,6 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
-require_once 'test.php';
 
 //require_once 'jsonRPCClient.php';
 
@@ -24,12 +23,11 @@ public function hello() {
           
 
 
-		 $bitcoin = new jsonRPCClient('http://optuse1:SweaterStaplePen@127.0.0.1:8332/');	 
-		 $info = $bitcoin->getinfo();
+	//	 $bitcoin = new jsonRPCClient('http://optuse1:SweaterStaplePen@127.0.0.1:8332/');	 
+	//	 $info = $bitcoin->getinfo();
 
-		$t = new test();
 
-        //$info = "!!!POPOPOPO!!!";
+      $info = "!!!POPOPOPO!!!";
 
         return view('hello', ['btcinfo' => $info]);
 
