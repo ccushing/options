@@ -11,6 +11,11 @@
 |
 */
 
+
+# Guest Routes for Get operations
+Route::get('/Hello', 'OptionsController@hello');
+
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('hello');
 });
