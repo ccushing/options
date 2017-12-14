@@ -77,11 +77,11 @@
                         </tr>            
                         <tr>
                             <td>Start Date</td>
-                            <td>{{ $contract->start_date }}</td>                       
+                            <td>{{ date('m-d-Y',strtotime($contract->start_date)) }}</td>                       
                         </tr>                        
                         <tr>
                             <td>End Date</td>
-                            <td>{{ $contract->end_date }}</td>                       
+                            <td>{{ date('m-d-Y',strtotime($contract->end_date)) }}</td>                       
                         </tr>                       
 
                         <tr>
@@ -94,7 +94,7 @@
                         </tr>
                         <tr>
                             <td>Expiration Date</td>
-                            <td>{{ $contract->expiration_date }}</td>                       
+                            <td>{{ date('m-d-Y',strtotime($contract->expiration_date)) }}</td>                       
                         </tr>                         
 
                         </table>
@@ -134,7 +134,7 @@
         </div>
     </div>
 </div>
-
+</div>
 
 
 @stop

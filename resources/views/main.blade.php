@@ -21,6 +21,9 @@
       <link href="/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
       <link href="/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
       <link href="/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+
+      <link href="/css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css">
+
       <!--    CSS File for the Site -->
       <link href="/css/layout.css" rel="stylesheet" type="text/css">
    </head>
@@ -106,7 +109,7 @@
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
             <script src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js" type="text/javascript"></script>
             -->
-         <script src="/js/p4.js" type="text/javascript"></script>
+
          <!-- jQuery -->
          <script src="/vendors/jquery/dist/jquery.min.js"></script>
          <!-- Bootstrap -->
@@ -124,13 +127,18 @@
          <script src="/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
          <script src="/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
          <script src="/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+
+          <script src="/js/moment.js" type="text/javascript"></script>
+          <script src="/js/bootstrap-datetimepicker.js" type="text/javascript"></script>
          <!-- Custom Theme Scripts -->
          <!--<script src="../build/js/custom.min.js"></script>-->
          <script src="/js/p4.js" type="text/javascript"></script>
+
          <script type="text/javascript">
             init_DataTables(); 
             $('.input-group').datetimepicker({format: 'MM-DD-YYYY'});     
          </script>
+
 
    </body>
 </html>

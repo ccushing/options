@@ -25,7 +25,7 @@ Route::get('/ContractDetail/{contract_id}', 'OptionsController@contractDetail');
 
 Route::post('/Search', 'OptionsController@search');
 Route::post('/AdvancedSearch', 'OptionsController@advancedSearch');
-Route::post('/postCreateContract', 'OptionsController@createContract');
+Route::post('/postCreateContract', 'OptionsController@postCreateContract');
 Route::post('/postPurchaseContract', 'OptionsController@purchaseContract');
 Route::post('/postDeleteContract', 'OptionsController@deleteContract');
 Route::post('/postUpdateContract', 'OptionsController@updateContract');

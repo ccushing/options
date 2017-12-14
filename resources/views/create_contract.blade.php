@@ -57,14 +57,14 @@
                             <label  for="underwriter-address"><span class="required">*</span>Underwriter Address <a title="" href="#" data-original-title="Enter your wallet address here" data-toggle="tooltip"><span class="fa fa-info-circle"></span></a>
                             </label>
                             
-                              <input type="text" id="underwriter-address" required="required" class="form-control col-md-7 col-xs-12">
+                              <input type="text" id="underwriter-address" name="underwriter-address" required="required" class="form-control col-md-7 col-xs-12">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-6 col-sm-6 col-xs-12">
                             <label  for="symbol"><span class="required">*</span>Currency</label>
-                                  <select class="form-control" id="symbol">
+                                  <select class="form-control" id="symbol" name="symbol" >
                                     <option value="BTC">BTC - Bitcoin</option>
                                     <option value="ETH">ETH - Ethereum</option>
                                     <option value="XRP">XRP - Ripple</option>
@@ -80,7 +80,7 @@
                             </label>
                             
                                             <div class='input-group date'>
-                                                <input type='text' id='start-date' class="form-control" />
+                                                <input type='text' id='start-date' name="start-date" class="form-control" />
                                                 <span class="input-group-addon">
                                                     <span class="glyphicon glyphicon-calendar"></span>
                                                 </span>
@@ -92,7 +92,7 @@
                             </label>
                             
                                             <div class='input-group date' >
-                                                <input type='text' id='end-date' class="form-control" />
+                                                <input type='text' id='end-date' name="end-date" class="form-control" />
                                                 <span class="input-group-addon">
                                                     <span class="glyphicon glyphicon-calendar"></span>
                                                 </span>
@@ -104,7 +104,7 @@
                             <label  for="expiration-date"><span class="required">*</span>Expiration Date <a title="" href="#" data-original-title="Enter the Expiration Date for the Contract" data-toggle="tooltip"><span class="fa fa-info-circle"></span></a>
                             </label>                        
                                             <div class='input-group date'>
-                                                <input id='expiration-date' type='text' class="form-control" />
+                                                <input id='expiration-date' name="expiration-date" type='text' class="form-control" />
                                                 <span class="input-group-addon">
                                                     <span class="glyphicon glyphicon-calendar"></span>
                                                 </span>
@@ -117,19 +117,19 @@
                                 <label  for="underwriter-address"><span class="required">*</span>Strike Price <a title="" href="#" data-original-title="Enter the Contract Strike Price in Bitcoin" data-toggle="tooltip"><span class="fa fa-info-circle"></span></a>
                                 </label>
                                 
-                                  <input type="text" id="strike-price" required="required" class="form-control col-md-7 col-xs-12">
+                                  <input type="text" id="strike-price" name="strike-price" required="required" class="form-control col-md-7 col-xs-12">
                                 </div>
 
                                 <div class="col-md-4 col-sm-4col-xs-8">
                                 <label  for="payout-price"><span class="required">*</span>Payout Price <a title="" href="#" data-original-title="Enter the Payout Price to the owner if this contract is executed in Bitcoin" data-toggle="tooltip"><span class="fa fa-info-circle"></span></a>
                                 </label>
-                                  <input type="text" id="payout-price" required="required" class="form-control col-md-7 col-xs-12">
+                                  <input type="text" id="payout-price" name="payout-price" required="required" class="form-control col-md-7 col-xs-12">
                                 </div>
 
                                 <div class="col-md-4 col-sm-4col-xs-8">
                                 <label  for="purchase-price"><span class="required">*</span>Purchase Price <a title="" href="#" data-original-title="This is the price in Bitcoin that you are selling this contract" data-toggle="tooltip"><span class="fa fa-info-circle"></span></a>
                                 </label>
-                                <input type="text" id="purchase-price" required="required" class="form-control col-md-7 col-xs-12">
+                                <input type="text" id="purchase-price" name="purchase-price" required="required" class="form-control col-md-7 col-xs-12">
                                   
                                 </div>
                             </div>
@@ -147,7 +147,7 @@
                                 <p id="contract-template" class="hidden"> I agree to pay the owner of the contract #payout-price# if the price of #currency-symbol# reaches #strike-price# between #start-date# and #end-date#. The option to purchase this contract expires on #expiration-date#. <br>
                                  This contract will be available for sale for #purchase-price# when #payout-price# is received by Address : #underwriter-address# to Escrow Address #escrow-address#. </p>
 
-                                <input type="text" id="escrow-account" class="hidden" value="1EV8qZiiQYUL8uMrbvVjLafmt7dAjWyxF6">
+                                <input type="text" id="escrow-account" name="escrow-account" class="hidden" value="1EV8qZiiQYUL8uMrbvVjLafmt7dAjWyxF6">
 
                                 </div>
 
@@ -164,7 +164,7 @@
                             </div>
 
                             <div class="row">
-                              <input type="text" id="signature" required="required" class="form-control col-md-7 col-xs-12">
+                              <input type="text" id="signature" name="signature" required="required" class="form-control col-md-7 col-xs-12">
                             </div>
 
                             <div class="row">
@@ -224,7 +224,7 @@
                     var purchaseprice = document.getElementById('purchase-price').value;
                     var payoutprice = document.getElementById('payout-price').value;
 
-                    var currency = document.getElementById('currency').value;
+                    var currency = document.getElementById('symbol').value;
                     var underwriteraddress = document.getElementById('underwriter-address').value;
                     var escrowaccount = document.getElementById('escrow-account').value;
 

@@ -110,6 +110,8 @@ public function hello() {
 
         return view('contract_detail', ['title' => "Contract : ".$contract_id,'contract' => $items[0]]);
 
+
+
     }
 
 
@@ -179,23 +181,35 @@ function postCreateContract(Request $request)
 {
     $isValid = true;
 
+#dd($request->all());
 
-        $underwriterAddress = $request->input("underwriter-address");
-        $symbol = $request->input("symbol");
-        $startDate = $request->input("start-date");
-        $endDate = $request->input("end-date");
-        $expirationDate = $request->input("expiration-date");
-        $strikePrice = $request->input("strike-price");
-        $payoutPrice = $request->input("payout-price");
-        $purchasePrice = $request->input("purchase-price");
-        $signature = $request->input("signature");
+#d($request->all());
+    #$timestamp = strtotime($request->input('start-date'));
+    #echo($request->input('start-date'));
+    #echo("<br>");
 
+    echo(date("Y-m-d",strtotime(str_replace("-","/","12-13-2017")))); 
+
+
+
+
+        $underwriterAddress = $request->input('underwriter-address');
+        $symbol = $request->input('symbol');
+        $startDate = date("Y-m-d",strtotime(str_replace("-","/",$request->input('start-date')))) ;
+        $endDate =date("Y-m-d",strtotime(str_replace("-","/",$request->input('end-date')))) ;
+        $expirationDate = date("Y-m-d",strtotime(str_replace("-","/",$request->input('expiration-date')))) ;
+        $strikePrice = $request->input('strike-price');
+        $payoutPrice = $request->input('payout-price');
+        $purchasePrice = $request->input('purchase-price');
+        $signature = $request->input('signature');
+
+        #echo("underwriter_address=".$underwriterAddress);
 
         // Validate
         if ($isValid)
         {
 
-            $contract = new \options\Contract();
+            $contract = new \App\Contract();
 
             $contract->underwriter_address=$underwriterAddress;
             $contract->symbol=$symbol;
@@ -203,16 +217,17 @@ function postCreateContract(Request $request)
             $contract->end_date=$endDate;
             $contract->expiration_date=$expirationDate;
             $contract->strike_price=$strikePrice;
-            $contract->payout_price=$payoutPrice;
+            $contract->payout=$payoutPrice;
             $contract->purchase_price=$purchasePrice;
             $contract->signature=$signature;
             $contract->save();       
 
         }
 
-        $contract_id = $contract->contract_id;
+        $contract_id = $contract->id;
 
-    contractDetail(null,$contract_id);
+        return \Redirect::to('/ContractDetail/'.$contract_id);  
+        
 
 }
 
