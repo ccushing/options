@@ -66,21 +66,18 @@
 
                         @foreach ($contracts as $contract)
 
-
-
                               <tr>
                                 <td>{{ $contract->symbol }}</td>
                                 <td>{{ $contract->status }}</td>
-                                <td>{{ $contract->start_date }}</td>
-                                <td>{{ $contract->end_date }}</td>
+                                <td>{{ date('m-d-Y',strtotime($contract->start_date)) }}</td>
+                                <td>{{ date('m-d-Y',strtotime($contract->end_date)) }}</td>
                                 <td>{{ $contract->strike_price }}</td>
                                 <td>{{ $contract->payout }}</td>
                                 <td>{{ $contract->purchase_price }}</td> 
                                 <td><a href='/ContractDetail/{{ $contract->contract_id }}'>view</a></td>                       
                               </tr>
 
-
-                            @endforeach
+                        @endforeach
 
                       </tbody>
                       </table>                            
