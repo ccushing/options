@@ -168,7 +168,7 @@ public static function subNavItems($status)
                 GROUP BY
                 c.symbol
                 ORDER BY
-                c.status,
+                c.symbol,
                 COUNT(*) DESC";
 
 
