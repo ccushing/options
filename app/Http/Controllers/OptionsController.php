@@ -23,7 +23,13 @@ public function hello() {
           
 
 
-		 $bitcoin = new \App\jsonRPCClient('http://route:route@172.30.0.179:8332/');	 
+
+
+
+
+
+		 $bitcoin = new \App\jsonRPCClient('http://".env('RPC_USER', 'route').":".env('RPC_USER_PWD', 'route')."@".env('RPC_IP', '172.30.0.179').":".env('RPC_PORT', '18333')."/');	 
+         
          #$bitcoin = new \App\jsonRPCClient('http://optuse1:SweaterStaplePen@104.236.85.204/');  
 		# $info = $bitcoin->getinfo();
          $info = $bitcoin->getblockcount();
