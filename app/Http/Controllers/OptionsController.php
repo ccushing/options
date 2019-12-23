@@ -23,7 +23,7 @@ public function hello() {
           
 
 
-		 $bitcoin = new \App\jsonRPCClient('http://optuse1:SweaterStaplePen@127.0.0.1:8332/');	 
+		 $bitcoin = new \App\jsonRPCClient('http://route:route@172.30.0.179:8332/');	 
          #$bitcoin = new \App\jsonRPCClient('http://optuse1:SweaterStaplePen@104.236.85.204/');  
 		# $info = $bitcoin->getinfo();
          $info = $bitcoin->getblockcount();
