@@ -53,41 +53,29 @@
                         {{ csrf_field() }}
 
                         <div class="row">
-                            <div class="col-md-3 col-sm-3 col-xs-6">
-                            <label  for="security"><span class="required">*</span>Security</label>
-                                  <select class="form-control" id="security" name="security" >
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                            <label  for="underwriter-address"><span class="required">*</span>Underwriter Address <a title="" href="#" data-original-title="Enter your wallet address here" data-toggle="tooltip"><span class="fa fa-info-circle"></span></a>
+                            </label>
+                            
+                              <input type="text" id="underwriter-address" name="underwriter-address" required="required" class="form-control col-md-7 col-xs-12">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                            <label  for="symbol"><span class="required">*</span>Currency</label>
+                                  <select class="form-control" id="symbol" name="symbol" >
                                     <option value="BTC">BTC - Bitcoin</option>
                                     <option value="ETH">ETH - Ethereum</option>
                                     <option value="XRP">XRP - Ripple</option>
                                     <option value="SLR">SLR - Stellar</option>
-                                    <option value="LTE">LTE - Lite Coin</option>
+                                    <option value="LTE">LTE - Lite Coing</option>
                                   </select>
                             </div>
-
-                            <div class="col-md-3 col-sm-3 col-xs-6">
-                            <label  for="operator"><span class="required">*</span>Operator</label>
-                                  <select class="form-control" id="operator" name="operator" >
-                                    <option value="Above">Goes above</option>
-                                    <option value="Below">Goes below</option>
-                                  </select>
-                            </div>
-
-                            <div class="col-md-3 col-sm-3 col-xs-6">
-                            <label  for="execution-price"><span class="required">*</span>Execution Price <a title="" href="#" data-original-title="Execution Price" data-toggle="tooltip"><span class="fa fa-info-circle"></span></a>
-                            </label>
-                            
-                              <input type="text" id="execution-price" name="execution-price" required="required" class="form-control col-md-3 col-xs-2">
-                            </div>
-
-
-
                         </div>
 
-
-
-
                         <div class="row">
-                            <div class="col-md-3 col-sm-3 col-xs-4">
+                            <div class="col-md-4 col-sm-4col-xs-8">
                             <label  for="start-date"><span class="required">*</span>Start Date <a title="" href="#" data-original-title="Enter the Start Date for the Contract" data-toggle="tooltip"><span class="fa fa-info-circle"></span></a>
                             </label>
                             
@@ -99,7 +87,7 @@
                                             </div>
                             </div>
                            
-                            <div class="col-md-3 col-sm-3 col-xs-4">
+                            <div class="col-md-4 col-sm-4col-xs-8">
                             <label  for="end-date"><span class="required">*</span>End Date <a title="" href="#" data-original-title="Enter the End Date for the Contract" data-toggle="tooltip"><span class="fa fa-info-circle"></span></a>
                             </label>
                             
@@ -112,53 +100,79 @@
                             </div>
 
 
-
-
-                            </div>
-
-
-
-                        <div class="row">
-
-                            <div class="col-md-3 col-sm-3 col-xs-4">
-                            <label  for="payout"><span class="required">*</span>Contract Payout <a title="" href="#" data-original-title="Contract Payout" data-toggle="tooltip"><span class="fa fa-info-circle"></span></a>
-                            </label>
-                            
-                              <input type="text" id="payout" name="payout" required="required" class="form-control col-md-7 col-xs-12">
-                            </div>
-
-                            <div class="col-md-3 col-sm-3 col-xs-4">
-                            <label  for="contract-price"><span class="required">*</span>Contract Sale Price <a title="" href="#" data-original-title="Contract Sale Price" data-toggle="tooltip"><span class="fa fa-info-circle"></span></a>
-                            </label>
-                            
-                              <input type="text" id="contract-price" name="contract-price" required="required" class="form-control col-md-7 col-xs-12">
-                            </div>
-
-
-                        </div>
-
-
-
-
-                        <div class="row">
-                            <div class="col-md-6 col-sm-6 col-xs-12">
-                            <label  for="underwriter-address"><span class="required">*</span>Underwriter Address <a title="" href="#" data-original-title="Enter your wallet address here" data-toggle="tooltip"><span class="fa fa-info-circle"></span></a>
-                            </label>
-                            
-                              <input type="text" id="underwriter-address" name="underwriter-address" required="required" class="form-control col-md-7 col-xs-12">
+                            <div class="col-md-4 col-sm-4col-xs-8">
+                            <label  for="expiration-date"><span class="required">*</span>Expiration Date <a title="" href="#" data-original-title="Enter the Expiration Date for the Contract" data-toggle="tooltip"><span class="fa fa-info-circle"></span></a>
+                            </label>                        
+                                            <div class='input-group date'>
+                                                <input id='expiration-date' name="expiration-date" type='text' class="form-control" />
+                                                <span class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-calendar"></span>
+                                                </span>
+                                            </div>
                             </div>
                         </div>
 
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4col-xs-8">
+                                <label  for="underwriter-address"><span class="required">*</span>Strike Price <a title="" href="#" data-original-title="Enter the Contract Strike Price in Bitcoin" data-toggle="tooltip"><span class="fa fa-info-circle"></span></a>
+                                </label>
+                                
+                                  <input type="text" id="strike-price" name="strike-price" required="required" class="form-control col-md-7 col-xs-12">
+                                </div>
 
+                                <div class="col-md-4 col-sm-4col-xs-8">
+                                <label  for="payout-price"><span class="required">*</span>Payout Price <a title="" href="#" data-original-title="Enter the Payout Price to the owner if this contract is executed in Bitcoin" data-toggle="tooltip"><span class="fa fa-info-circle"></span></a>
+                                </label>
+                                  <input type="text" id="payout-price" name="payout-price" required="required" class="form-control col-md-7 col-xs-12">
+                                </div>
+
+                                <div class="col-md-4 col-sm-4col-xs-8">
+                                <label  for="purchase-price"><span class="required">*</span>Purchase Price <a title="" href="#" data-original-title="This is the price in Bitcoin that you are selling this contract" data-toggle="tooltip"><span class="fa fa-info-circle"></span></a>
+                                </label>
+                                <input type="text" id="purchase-price" name="purchase-price" required="required" class="form-control col-md-7 col-xs-12">
+                                  
+                                </div>
                             </div>
 
 
                             <div class="row">
-                            <button class="btn btn-round btn-primary" type="submit">Generate Contract</button>
+                                <label  for="contract-text">Contract<a title="" href="#" data-original-title="This is the language of the contract you are creating" data-toggle="tooltip"><span class="fa fa-info-circle"></span></a>
+                                </label>
+
+                                <div class="contract-text">
+
+                                <p id="contract-text"> </p>
+
+
+                                <p id="contract-template" class="hidden"> I agree to pay the owner of the contract #payout-price# if the price of #currency-symbol# reaches #strike-price# between #start-date# and #end-date#. The option to purchase this contract expires on #expiration-date#. <br>
+                                 This contract will be available for sale for #purchase-price# when #payout-price# is received by Address : #underwriter-address# to Escrow Address #escrow-address#. </p>
+
+                                <input type="text" id="escrow-account" name="escrow-account" class="hidden" value="1EV8qZiiQYUL8uMrbvVjLafmt7dAjWyxF6">
+
+                                </div>
+
+                                    <p id="contract-instructions" >Copy the contract text above, sign the message and copy the digital signature into the digital signature box below from address #underwriter-address#.</p>
                             </div>
 
+
+
+
+                            <div class="row">
+                            <div class="col-md-12 col-sm-6 col-xs-12">
+                            <label  for="underwriter-address"><span class="required">*</span>Digital Signature <a title="" href="#" data-original-title="Sign the contract language with your Bitcoin client and enter the signature here." data-toggle="tooltip"><span class="fa fa-info-circle"></span></a>
+                            </label>
                             </div>
 
+                            <div class="row">
+                              <input type="text" id="signature" name="signature" required="required" class="form-control col-md-7 col-xs-12">
+                            </div>
+
+                            <div class="row">
+                            <button class="btn btn-round btn-primary" type="button" onclick="updateContract()">Check</button>
+                            <button class="btn btn-round btn-primary" type="submit">Confirm</button>
+
+                            </div>
+                            </div>
 
                             </form>
 

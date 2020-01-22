@@ -29,6 +29,7 @@ Route::post('/postCreateContract', 'OptionsController@postCreateContract');
 Route::post('/postPurchaseContract/{contract_id}/{owner_address}', 'OptionsController@purchaseContract');
 Route::post('/postDeleteContract', 'OptionsController@deleteContract');
 Route::post('/postUpdateContract', 'OptionsController@updateContract');
+Route::post('/postValidateContract', 'OptionsController@postValidateContract');
 
 
 
